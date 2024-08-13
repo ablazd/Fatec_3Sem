@@ -125,3 +125,10 @@ db.receitas.updateMany({},
 )
 use('aula02')
 db.receitas.find({nome: /cogu/i}, {nome:1, calorias:1})
+
+//delete
+use('aula02')
+db.receitas.deleteOne({_id: '123'})
+//delete from receitas where preco > 10
+use('aula02')
+db.receitas.deleteMany({preco: {$gt: 10}})
