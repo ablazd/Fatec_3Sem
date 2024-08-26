@@ -29,9 +29,9 @@ public class teste {
     @Test
     public void testValidaLoginIncorreto() {
         Controller controle = new Controller();
-        controle.registraUser("admin", "senha123");
+        controle.registraUser("admin", "123");
 
-        assertFalse(controle.validaLogin("admin", "senhaSenha"), "O usuario não deveria conseguir entrar");
+        assertFalse(controle.validaLogin("admin", "senha"), "O usuario não deveria conseguir entrar");
     }
     
 }
