@@ -4,6 +4,6 @@ db.estados.find(forEach(function(estado){
         {_id: estado._id}, {
             $set: {type: 'Point', coordinates:[estado.longitude, estado.latitude]}
         }, 
-        $unset: {latitude: '', longitude: ''}
-    )
+        {$unset: {latitude: '', longitude: ''}
+})
 }))
