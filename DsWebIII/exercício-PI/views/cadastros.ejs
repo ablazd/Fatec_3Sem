@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cadastros</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Usuários Cadastrados</h1>
+    <ul>
+        <% if (cadastros.length > 0) { %>
+            <% cadastros.forEach(function(cadastro) { %>
+                <li>
+                    <span><%= cadastro.nome %> - <%= cadastro.email %></span>
+                    <form action="/excluir/<%= cadastro._id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button">Excluir</button>
+                    </form>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <li>Nenhum usuário cadastrado.</li>
+        <% } %>
+    </ul>
+    <a href="/">Voltar para a Página Inicial</a>
+</body>
+</html>
