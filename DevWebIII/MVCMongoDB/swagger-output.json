@@ -1,0 +1,335 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MVC com MongoDB",
+    "description": "Projeto MVC com integração ao MongoDB"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Retorna a lista de usuários",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Lista de usuários retornada com sucesso"
+          },
+          "500": {
+            "description": "Erro ao buscar a lista de usuários"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Cria um novo usuário",
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso"
+          },
+          "500": {
+            "description": "Erro ao cadastrar o usuário"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Retorna os detalhes de um usuário específico",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário encontrado"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "500": {
+            "description": "Erro ao buscar usuário"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Atualiza um usuário existente",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário atualizado com sucesso"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "500": {
+            "description": "Erro ao atualizar usuário"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Remove um usuário existente",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário deletado com sucesso"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "500": {
+            "description": "Erro ao deletar usuário"
+          }
+        }
+      }
+    },
+    "/project": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Retorna a lista de projetos",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Lista de projetos retornada com sucesso"
+          },
+          "500": {
+            "description": "Erro ao buscar a lista de projetos"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Cria um novo projeto",
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Projeto criado com sucesso"
+          },
+          "500": {
+            "description": "Erro ao cadastrar o projeto"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "assignedTo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/project/{id}": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Retorna os detalhes de um projeto específico",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do projeto"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Projeto encontrado"
+          },
+          "404": {
+            "description": "Projeto não encontrado"
+          },
+          "500": {
+            "description": "Erro ao buscar projeto"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Atualiza um projeto existente",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do projeto"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Projeto atualizado com sucesso"
+          },
+          "404": {
+            "description": "Projeto não encontrado"
+          },
+          "500": {
+            "description": "Erro ao atualizar projeto"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "assignedTo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Remove um projeto existente",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID do projeto"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Projeto deletado com sucesso"
+          },
+          "404": {
+            "description": "Projeto não encontrado"
+          },
+          "500": {
+            "description": "Erro ao deletar projeto"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MVC example",
+    "description": "showing how to use mvc"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Renderiza a tela inicial",
+        "description": "Esse endpoint renderiza a tela inicial e exibe uma mensagem de cadastro vazia.",
+        "responses": {
+          "200": {
+            "description": "Tela inicial carregada com sucesso"
+          }
+        }
+      }
+    },
+    "/save": {
+      "post": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Salva um novo registro",
+        "description": "Esse endpoint salva um novo cadastro com base nos campos fornecidos no corpo da requisição. Retorna uma mensagem de sucesso ou erro.",
+        "responses": {
+          "200": {
+            "description": "Cadastro salvo com sucesso ou erro de validação."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Renderiza a tela do Administrador",
+        "description": "Esse endpoint mostra a tela do administrador e todos cadastros.",
+        "responses": {
+          "200": {
+            "description": "Tela carregada com sucesso"
+          }
+        }
+      }
+    },
+    "/admin/delete": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Deleta um cadastro",
+        "description": "Esse endpoint deleta um cadastro com base no email fornecido no corpo da requisição.",
+        "responses": {
+          "200": {
+            "description": "Cadastro deletado com sucesso"
+          },
+          "404": {
+            "description": "Cadastro não encontrado"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/emailCount": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Conta o número de cadastros",
+        "description": "Esse endpoint conta o número total de cadastros e exibe a lista de cadastros e o total.",
+        "responses": {
+          "200": {
+            "description": "Lista de registros e total"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envia temperatura</title>
+</head>
+<body>
+    <form action="/temperatura/save" method="post">
+        <div class="form-group">
+            <label>Temperatura</label>
+            <input type="text" name="temperatura" class="form-control">
+            <label>Tipo</label>
+            <select name="tipo" id="">
+                <option value="C" selected>Celsius</option>
+                <option value="F">Fahrenheit</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html>
