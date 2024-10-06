@@ -5,7 +5,7 @@ exports.getProject = async function(req, res) {
         #swagger.tags = ['Project']
         #swagger.summary = 'Retorna a lista de projetos'
         #swagger.responses[200] = {
-            description: 'Lista de projetos retornada com sucesso'
+            description: 'Lista de projetos retornada'
         }
         #swagger.responses[500] = {
             description: 'Erro ao buscar a lista de projetos'
@@ -39,7 +39,7 @@ exports.create = function(req, res) {
             }
         }
         #swagger.responses[201] = {
-            description: 'Projeto criado com sucesso'
+            description: 'Projeto criado'
         }
         #swagger.responses[500] = {
             description: 'Erro ao cadastrar o projeto'
@@ -109,7 +109,7 @@ exports.updateProject = async function(req, res) {
             }
         }
         #swagger.responses[200] = {
-            description: 'Projeto atualizado com sucesso'
+            description: 'Projeto atualizado'
         }
         #swagger.responses[404] = {
             description: 'Projeto não encontrado'
@@ -139,7 +139,7 @@ exports.deleteProject = async function(req, res) {
             type: 'string'
         }
         #swagger.responses[200] = {
-            description: 'Projeto deletado com sucesso'
+            description: 'Projeto deletado'
         }
         #swagger.responses[404] = {
             description: 'Projeto não encontrado'

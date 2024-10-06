@@ -4,7 +4,7 @@ const doc = {
     info: {
         version: '1.0.0',
         title: 'MVC com MongoDB',
-        description: 'Projeto MVC com integração ao MongoDB'
+        description: 'Projeto MVC integração com MongoDB'
     },
     servers: [
         {

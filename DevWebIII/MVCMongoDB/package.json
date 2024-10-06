@@ -1,14 +1,14 @@
 {
   "name": "mvcmongodb",
   "version": "1.0.0",
-  "description": "Projeto com MongoDB para persistencia de dados",
+  "description": "Projeto com MongoDB persistencia de dados",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "swagger": "node swagger.js"
   },
-  "author": "ZanKir",
+  "author": "Ana",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",

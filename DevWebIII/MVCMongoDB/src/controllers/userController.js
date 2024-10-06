@@ -5,7 +5,7 @@ exports.getUser = async function (req, res) {
         #swagger.tags = ['User']
         #swagger.summary = 'Retorna a lista de usuários'
         #swagger.responses[200] = {
-            description: 'Lista de usuários retornada com sucesso'
+            description: 'Lista de usuários retornada'
         }
         #swagger.responses[500] = {
             description: 'Erro ao buscar a lista de usuários'
@@ -38,7 +38,7 @@ exports.create = function (req, res) {
             }
         }
         #swagger.responses[201] = {
-            description: 'Usuário criado com sucesso'
+            description: 'Usuário criado'
         }
         #swagger.responses[500] = {
             description: 'Erro ao cadastrar o usuário'
@@ -109,7 +109,7 @@ exports.updateUser = async function (req, res) {
             }
         }
         #swagger.responses[200] = {
-            description: 'Usuário atualizado com sucesso'
+            description: 'Usuário atualizado'
         }
         #swagger.responses[404] = {
             description: 'Usuário não encontrado'
@@ -119,7 +119,6 @@ exports.updateUser = async function (req, res) {
         }
     */
   try {
-    //findByIdAndUpdate(id, dados, {new: true} (retorna o documento atualizado em vez do original))
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
@@ -142,7 +141,7 @@ exports.deleteUser = async function (req, res) {
             type: 'string'
         }
         #swagger.responses[200] = {
-            description: 'Usuário deletado com sucesso'
+            description: 'Usuário deletado'
         }
         #swagger.responses[404] = {
             description: 'Usuário não encontrado'
